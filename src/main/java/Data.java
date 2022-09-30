@@ -8,14 +8,14 @@ public class Data implements Serializable {
     private final String text;
     private final String type;
     private final String user;
-    private final String upvotes;
+    private final int upvotes;
 
     public Data(
             @JsonProperty("id") String id,
             @JsonProperty("text") String text,
             @JsonProperty("type") String type,
             @JsonProperty("user") String user,
-            @JsonProperty("upvotes") String upvotes
+            @JsonProperty("upvotes") int upvotes
     ) {
         this.id = id;
         this.text = text;
@@ -40,13 +40,13 @@ public class Data implements Serializable {
         return user;
     }
 
-    public String getUpvotes() {
+    public int getUpvotes() {
         return upvotes;
     }
 
     @Override
     public String toString() {
-        return String.format("About cats\n userId: %s\n text: %s \n type: %s\n User: %s\n upvotes: %s",
+        return String.format("About cats\n userId: %s\n text: %s \n type: %s\n User: %s\n upvotes: %d",
                 id, text, type, user, upvotes);
     }
 }

@@ -22,9 +22,8 @@ public class Client {
                     response.getEntity().getContent(), new TypeReference<>() {
                     });
 
-            posts.stream().
-                    filter(data -> data.getUpvotes() != null)
-                    .filter(data -> !"0".equals(data.getUpvotes()))
+            posts.stream()
+                    .filter(data -> data.getUpvotes() !=0)
                     .forEach(System.out::println);
 
         } catch (Exception e) {
